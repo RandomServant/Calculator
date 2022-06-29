@@ -50,7 +50,7 @@ namespace Calculator
                 isNextNumber = false;
                 if (operand.Length != 0)
                 {
-                    upText = upText.Remove(upperText.Text.Length - operand.Length, operand.Length);
+                    upText = upText.Remove(upText.Length - operand.Length, operand.Length);
                     upperText.Text = OutUpperText(upText);
                     answer = back;
                     isFunction = false;
@@ -87,7 +87,7 @@ namespace Calculator
                 isNextNumber = false;
                 if (operand.Length != 0)
                 {
-                    upText = upText.Remove(upperText.Text.Length - operand.Length, operand.Length);
+                    upText = upText.Remove(upText.Length - operand.Length, operand.Length);
                     upperText.Text = OutUpperText(upText);
                     answer = back;
                     isFunction = false;
@@ -337,7 +337,7 @@ namespace Calculator
             if (isBlock) return;
             if (!isFunction) back = answer;
 
-            if(upText.Length == 0)
+            if(upText.Length == 0 && !isNextNumber)
             {
                 centerText.Text = (-1 * double.Parse(centerText.Text)).ToString();
                 return;
